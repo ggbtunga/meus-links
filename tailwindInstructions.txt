@@ -1,0 +1,17 @@
+Certifique seu diretório
+
+Comandos no terminal para baixar:
+    npm install -D tailwindcss
+    npx tailwindcss init
+
+Config:
+Dentro de tailwind.config.js(após ter baixado),dentro de module.exports ->
+    content: [
+        "./src/**/*.{js,jsx,ts,tsx}",
+    ],
+
+Apague App.css
+Dentro de index.css tire tudo e coloque:
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
