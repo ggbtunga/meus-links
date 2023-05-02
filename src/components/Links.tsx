@@ -1,17 +1,26 @@
 import React from 'react'
-
+import { useToast,Box } from '@chakra-ui/react'
 
 const Links = () => {
 
     function copyUrl(text: string): void {
         navigator.clipboard.writeText(text)
           .then(() => {
-            console.log('Texto copiado para a área de transferência!');
+            toast({
+                position: 'bottom-left',
+                render: () => (
+                  <Box color='white' p={3} bg='green.500'>
+                    Link Copied!
+                  </Box>
+                ),
+              })
           })
           .catch((error) => {
             console.error('Erro ao copiar texto:', error);
           });
-      }
+      };
+      
+      const toast = useToast();
 
     return (
         <div className='ease-in'>
